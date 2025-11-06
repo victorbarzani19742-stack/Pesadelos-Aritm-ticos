@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://nvd8jbk1dwgt"]
+
+[ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="1_ad4go"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnyn0"]
+radius = 14.0
+height = 36.0
+
+[node name="Portal" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lnyn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ad4go")

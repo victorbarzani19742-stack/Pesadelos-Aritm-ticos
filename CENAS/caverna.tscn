@@ -2766,7 +2766,7 @@ scale = Vector2(0.35, 0.35)
 [node name="Camera2D" type="Camera2D" parent="Aluno"]
 position = Vector2(0, 31.4286)
 scale = Vector2(2.85714, 2.85714)
-zoom = Vector2(2.75, 2.75)
+zoom = Vector2(3, 3)
 script = ExtResource("2_htsts")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

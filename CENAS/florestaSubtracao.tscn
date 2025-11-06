@@ -27,6 +27,7 @@ texture = ExtResource("2_xllnj")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ruij7"]
+tile_size = Vector2i(16, 17)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_0lvqe")
@@ -75,7 +76,7 @@ shape = SubResource("RectangleShape2D_l6tsj")
 script = ExtResource("12_0lvqe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.2, 2.2)
+zoom = Vector2(3, 3)
 script = ExtResource("1_hb7na")
 target_path = NodePath("../Aluno")
 camera_offset = Vector2(0, -20)
