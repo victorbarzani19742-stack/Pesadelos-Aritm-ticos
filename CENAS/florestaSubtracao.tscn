@@ -67,6 +67,6 @@ metadata/_edit_lock_ = true
 position = Vector2(120, -16)
 
 [node name="Portal" parent="." instance=ExtResource("7_ojb53")]
-position = Vector2(155, -22)
+position = Vector2(416, -263)
 
 [connection signal="body_entered" from="ZonaMorta" to="Aluno" method="_on_zona_morta_body_entered"]
