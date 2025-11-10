@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://chanbyji41jbx"]
+
+[ext_resource type="Texture2D" uid="uid://blvjocxac6rlr" path="res://ASSESTS/HUD/Imagem do WhatsApp de 2025-10-27 à(s) 20.06.26_bb1c2abc.jpg" id="1_qvb80"]
+
+[node name="Menu" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(639.875, 361.875)
+scale = Vector2(0.830892, 0.705322)
+texture = ExtResource("1_qvb80")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://frq51s6m2xyu"]
+
+[ext_resource type="Script" uid="uid://bc21celwvqu4y" path="res://CENAS/HUD.gd" id="1_86hug"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_86hug")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Restart" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Quit" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

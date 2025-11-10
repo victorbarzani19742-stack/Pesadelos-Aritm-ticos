@@ -3,5 +3,15 @@ res://CENAS/aurora.tscn
 res://CENAS/caverna.tscn
 res://CENAS/florestaSubtracao.tscn
 res://CENAS/montanhaMultiplicacao.tscn
-res://CENAS/aluno.gd
 res://CENAS/portal.tscn
+res://CENAS/canvas_layer.tscn
+res://CENAS/aluno.gd
+res://CENAS/portal.gd
+res://CENAS/portal_2.tscn
+res://CENAS/portal_2.gd
+res://CENAS/portal_3.tscn
+res://portal_2.gd
+res://portal_3.gd
+res://CENAS/portal_final.tscn
+res://CENAS/HUD.gd
+res://CENAS/menu.tscn
