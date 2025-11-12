@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://gi4jybk7b51r"]
+[gd_scene load_steps=6 format=3 uid="uid://gi4jybk7b51r"]
 
 [ext_resource type="Texture2D" uid="uid://biio8pv5403rt" path="res://ASSESTS/INIMIGOS/professor.png" id="1_hp8vh"]
 [ext_resource type="Script" uid="uid://cq72tsslfowjo" path="res://CENAS/enemy.gd" id="1_ol0vt"]
+[ext_resource type="Texture2D" uid="uid://bj0xtt4he1gja" path="res://ASSESTS/INIMIGOS/profWalk.png" id="3_1ogpk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itt5p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_hp8vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1ogpk")
 }],
 "loop": true,
 "name": &"walk",
