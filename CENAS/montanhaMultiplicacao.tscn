@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://hfq2u3vfrfyq"]
+[gd_scene load_steps=11 format=4 uid="uid://hfq2u3vfrfyq"]
 
 [ext_resource type="Texture2D" uid="uid://dvvxdpumlnpaj" path="res://ASSESTS/Tilesets/platforms.png" id="1_cwxbh"]
 [ext_resource type="PackedScene" uid="uid://b4hkwwi0txwwr" path="res://CENAS/aluno.tscn" id="1_fdc1x"]
 [ext_resource type="Texture2D" uid="uid://cwgl1poqsxt4o" path="res://ASSESTS/CENARIO/montanha.png" id="3_da0rs"]
 [ext_resource type="PackedScene" uid="uid://cpltyjgqsg1n" path="res://CENAS/portal_2.tscn" id="4_50t83"]
 [ext_resource type="Script" uid="uid://cky78r01hj1b4" path="res://CENAS/camera_2d.gd" id="5_sajf2"]
+[ext_resource type="Script" uid="uid://cx62mgj8bjkyy" path="res://CENAS/zona_morta.gd" id="6_4kadu"]
+[ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="7_h6srr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wja68"]
 texture = ExtResource("1_cwxbh")
@@ -20,6 +22,9 @@ tile_size = Vector2i(16, 17)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_wja68")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6srr"]
+size = Vector2(1285, 13)
 
 [node name="MontanhaMultiplicacao" type="Node"]
 
@@ -47,3 +52,25 @@ zoom = Vector2(3, 3)
 script = ExtResource("5_sajf2")
 target_path = NodePath("../Aluno")
 camera_offset = Vector2(0, -20)
+
+[node name="ZonaMorta" type="Area2D" parent="."]
+position = Vector2(26, -33)
+scale = Vector2(0.35, 0.35)
+collision_layer = 255
+collision_mask = 255
+
+[node name="ZonaMorta" type="CollisionShape2D" parent="ZonaMorta"]
+position = Vector2(1130, 584.286)
+scale = Vector2(2.85714, 2.85714)
+shape = SubResource("RectangleShape2D_h6srr")
+script = ExtResource("6_4kadu")
+
+[node name="Enemy" parent="." instance=ExtResource("7_h6srr")]
+position = Vector2(349, -215)
+scale = Vector2(0.04, 0.04)
+
+[node name="Enemy2" parent="." instance=ExtResource("7_h6srr")]
+position = Vector2(67, -62)
+scale = Vector2(0.04, 0.04)
+
+[connection signal="body_entered" from="ZonaMorta" to="Aluno" method="_on_zona_morta_body_entered"]

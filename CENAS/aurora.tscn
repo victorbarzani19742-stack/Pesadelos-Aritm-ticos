@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://btoy2utivyqvu"]
+[gd_scene load_steps=9 format=4 uid="uid://btoy2utivyqvu"]
 
 [ext_resource type="Texture2D" uid="uid://dvvxdpumlnpaj" path="res://ASSESTS/Tilesets/platforms.png" id="1_v7uqh"]
 [ext_resource type="PackedScene" uid="uid://b4hkwwi0txwwr" path="res://CENAS/aluno.tscn" id="2_at2oe"]
 [ext_resource type="Texture2D" uid="uid://dqv6j8wvquqfc" path="res://ASSESTS/CENARIO/aurora.png" id="3_hdhxv"]
 [ext_resource type="PackedScene" uid="uid://blifw43a5rudm" path="res://CENAS/portal_3.tscn" id="4_tprxq"]
 [ext_resource type="Script" uid="uid://cky78r01hj1b4" path="res://CENAS/camera_2d.gd" id="5_x8tc2"]
+[ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="6_33ogn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3n2k3"]
 texture = ExtResource("1_v7uqh")
@@ -47,3 +48,7 @@ zoom = Vector2(3, 3)
 script = ExtResource("5_x8tc2")
 target_path = NodePath("../Aluno")
 camera_offset = Vector2(0, -20)
+
+[node name="Enemy" parent="." instance=ExtResource("6_33ogn")]
+position = Vector2(733, -251)
+scale = Vector2(0.04, 0.04)
