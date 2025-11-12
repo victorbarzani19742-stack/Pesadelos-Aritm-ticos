@@ -1,22 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://frq51s6m2xyu"]
+[gd_scene load_steps=3 format=3 uid="uid://btrvninwasdxu"]
 
-[ext_resource type="Script" uid="uid://bc21celwvqu4y" path="res://CENAS/HUD.gd" id="1_86hug"]
+[ext_resource type="FontFile" uid="uid://bhsyin8k1caw4" path="res://ASSESTS/Font/font.ttf" id="2_6ea7x"]
 
-[node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_86hug")
+[sub_resource type="GDScript" id="GDScript_86hug"]
+script/source = "extends CanvasLayer
+signal restart
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+func show_game_over():
+	visible = true
+	$Message.text = \"Você perdeu\"
+	$Leave.visible = true
+	$Button.visible = true
+	$Sprite2D.visible = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
+func show_victory():
+	visible = true
+	$Message.text = \"Você venceu!\"
+	$Button.visible = true
+	$Sprite2D.visible = true
+	$Leave.visible = true
+	$Sprite2D.visible = true
+
+func hide_game_ui():
+	visible = false
+
+func _on_button_pressed() -> void:
+	hide_game_ui()
+	get_tree().change_scene_to_file(\"res://menu.tscn\")
+
+
+func _on_leave_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = SubResource("GDScript_86hug")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1273.0
+offset_bottom = 710.0
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1275.0
+offset_bottom = 711.0
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 384.0
+offset_top = 171.0
+offset_right = 802.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_6ea7x")
+theme_override_font_sizes/font_size = 70
+text = "Voce perdeu!"
 
-[node name="Restart" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 529.0
+offset_top = 434.0
+offset_right = 754.0
+offset_bottom = 596.0
+theme_override_constants/separation = 26
 
-[node name="Quit" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6ea7x")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6ea7x")
+theme_override_font_sizes/font_size = 50
+text = "Quit"

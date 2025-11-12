@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pesadelos Aritmeticos"
-run/main_scene="uid://cdgtnxvbxqb4r"
+run/main_scene="uid://ccukbn7bwnl4x"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameOverUi="*res://CENAS/game_over_ui.tscn"
 
 [display]
 

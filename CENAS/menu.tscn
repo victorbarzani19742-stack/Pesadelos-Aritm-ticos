@@ -1,24 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://chanbyji41jbx"]
+[gd_scene load_steps=4 format=3 uid="uid://ccukbn7bwnl4x"]
 
-[ext_resource type="Texture2D" uid="uid://blvjocxac6rlr" path="res://ASSESTS/HUD/Imagem do WhatsApp de 2025-10-27 à(s) 20.06.26_bb1c2abc.jpg" id="1_qvb80"]
+[ext_resource type="Script" uid="uid://cha1fpfkm3oks" path="res://CENAS/menu.gd" id="1_h4brn"]
+[ext_resource type="Texture2D" uid="uid://blvjocxac6rlr" path="res://ASSESTS/HUD/Imagem do WhatsApp de 2025-10-27 à(s) 20.06.26_bb1c2abc.jpg" id="1_mcqj3"]
+[ext_resource type="FontFile" uid="uid://bhsyin8k1caw4" path="res://ASSESTS/Font/font.ttf" id="2_h4brn"]
 
-[node name="Menu" type="Node"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(639.875, 361.875)
-scale = Vector2(0.830892, 0.705322)
-texture = ExtResource("1_qvb80")
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_h4brn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(647.5, 357.5)
+scale = Vector2(0.83138, 0.694336)
+texture = ExtResource("1_mcqj3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 155.0
+offset_right = 1011.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_h4brn")
+theme_override_font_sizes/font_size = 70
+text = "Pesadelos Aritméticos"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 396.0
+offset_right = 833.0
+offset_bottom = 567.0
+theme_override_constants/separation = 26
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h4brn")
+theme_override_font_sizes/font_size = 50
+text = "Play
+"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h4brn")
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -35,7 +35,7 @@ func _on_zona_morta_body_entered(body):
 
 
 func die():
-	call_deferred("_reload_scene")
+	GameOverUi.show_game_over()
 
 func _reload_scene():
 	get_tree().reload_current_scene()
