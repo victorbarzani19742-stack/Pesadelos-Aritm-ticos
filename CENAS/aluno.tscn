@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4hkwwi0txwwr"]
+
+[ext_resource type="Script" uid="uid://dxcsvnrfullon" path="res://CENAS/aluno.gd" id="1_3tilj"]
+[ext_resource type="Texture2D" uid="uid://bdrrb4dcn42p1" path="res://ASSESTS/player/studentidle.png" id="2_hexsy"]
+[ext_resource type="Texture2D" uid="uid://bi6lmd41sb630" path="res://ASSESTS/player/studentjump.png" id="3_i7m5k"]
+[ext_resource type="Texture2D" uid="uid://dwmbkcyfrahrn" path="res://ASSESTS/player/studentwalk1.png" id="4_jf5w3"]
+[ext_resource type="Texture2D" uid="uid://cm5aov403dyve" path="res://ASSESTS/player/studentwalk2.png" id="5_cmp52"]
+[ext_resource type="Script" uid="uid://qo4efp2rmym6" path="res://CENAS/animation.gd" id="6_r31oq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3i07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hexsy")
+}],
+"loop": true,
+"name": &"aluno",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i7m5k")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hexsy")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jf5w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cmp52")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko6ri"]
+size = Vector2(22, 48)
+
+[node name="Aluno" type="CharacterBody2D"]
+collision_mask = 30
+script = ExtResource("1_3tilj")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_r3i07")
+animation = &"aluno"
+autoplay = "aluno"
+script = ExtResource("6_r31oq")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ko6ri")

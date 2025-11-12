@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1muispxa1reu"]
+
+[ext_resource type="Script" uid="uid://cxwk3nfenlo8n" path="res://game_over_ui.gd" id="1_ji7mg"]
+[ext_resource type="FontFile" uid="uid://beoet8aj86v7i" path="res://ASSESTS/HUD/font.ttf" id="2_xu1am"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_ji7mg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1282.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.145098)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0.866667, 1, 1)
+offset_left = 252.0
+offset_top = 62.0
+offset_right = 579.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("2_xu1am")
+theme_override_font_sizes/font_size = 60
+text = "YOU LOSER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 545.0
+offset_top = 417.0
+offset_right = 727.0
+offset_bottom = 569.0
+theme_override_constants/separation = 26
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xu1am")
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xu1am")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

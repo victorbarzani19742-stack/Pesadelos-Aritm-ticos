@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://gcq7dry20qrh"]
+
+[ext_resource type="Script" uid="uid://b8yu727n1s0vc" path="res://ASSESTS/INIMIGOS/node_2d.gd" id="1_gj0i7"]
+[ext_resource type="Texture2D" uid="uid://dv4at4i3yrg8f" path="res://ASSESTS/INIMIGOS/Mushroom-Die.png" id="1_irr0g"]
+[ext_resource type="Texture2D" uid="uid://bn4d8xoywimcv" path="res://ASSESTS/INIMIGOS/Mushroom-Run1.png" id="2_gj0i7"]
+[ext_resource type="Texture2D" uid="uid://l5k5dev88q4k" path="res://ASSESTS/INIMIGOS/Mushroom-Run2.png" id="3_76wdq"]
+[ext_resource type="Texture2D" uid="uid://de5vxss7a3k5t" path="res://ASSESTS/INIMIGOS/Mushroom-Run3.png" id="4_7kv78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1jw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_irr0g")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gj0i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_76wdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7kv78")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irr0g"]
+size = Vector2(27, 32)
+
+[node name="Cogu" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_gj0i7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t1jw5")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_irr0g")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
+collision_mask = 2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

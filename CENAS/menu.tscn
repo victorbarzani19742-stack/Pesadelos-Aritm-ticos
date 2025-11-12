@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://chanbyji41jbx"]
+
+[ext_resource type="Script" uid="uid://b0fjgvtrea5pw" path="res://CENAS/menu.gd" id="1_mcqj3"]
+[ext_resource type="Texture2D" uid="uid://blvjocxac6rlr" path="res://ASSESTS/HUD/Imagem do WhatsApp de 2025-10-27 à(s) 20.06.26_bb1c2abc.jpg" id="1_qvb80"]
+[ext_resource type="FontFile" uid="uid://beoet8aj86v7i" path="res://ASSESTS/HUD/font.ttf" id="3_h4brn"]
+
+[sub_resource type="GDScript" id="GDScript_h4brn"]
+script/source = "extends Control
+
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://CENAS/aurora.tscn\")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id="GDScript_ab3cm"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mcqj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(639.875, 361.875)
+scale = Vector2(0.830892, 0.705322)
+texture = ExtResource("1_qvb80")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 138.0
+offset_right = 964.0
+offset_bottom = 253.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_h4brn")
+theme_override_font_sizes/font_size = 55
+text = "Pesadelos Aritmetricos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 437.0
+offset_right = 709.0
+offset_bottom = 595.0
+theme_override_constants/separation = 26
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_h4brn")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+script = SubResource("GDScript_h4brn")
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_h4brn")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+script = SubResource("GDScript_ab3cm")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

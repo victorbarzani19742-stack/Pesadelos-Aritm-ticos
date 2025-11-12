@@ -1,0 +1,12 @@
+res://CENAS/aluno.tscn
+res://CENAS/aurora.tscn
+res://CENAS/caverna.tscn
+res://CENAS/montanhaMultiplicacao.tscn
+res://CENAS/portal.tscn
+res://CENAS/portal_2.tscn
+res://CENAS/portal_3.tscn
+res://CENAS/portal_final.tscn
+res://CENAS/menu.tscn
+res://game_over_ui.tscn
+res://CENAS/florestaSubtracao.tscn
+res://CENAS/floresta_subtracao.gd

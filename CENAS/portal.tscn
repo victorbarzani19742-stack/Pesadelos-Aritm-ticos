@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://oukecwpxy5b2"]
+
+[ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="1_ad4go"]
+[ext_resource type="Script" uid="uid://b2do8k5ppkf15" path="res://CENAS/portal.gd" id="1_lnyn0"]
+[ext_resource type="Texture2D" uid="uid://c2dh7236lg235" path="res://ASSESTS/CENARIO/portal1_frame_1.png" id="2_m06oc"]
+[ext_resource type="Texture2D" uid="uid://vailwhq7cx7f" path="res://ASSESTS/CENARIO/portal1_frame_2.png" id="3_swb2r"]
+[ext_resource type="Texture2D" uid="uid://c81p1wma2jc6q" path="res://ASSESTS/CENARIO/portal1_frame_3.png" id="4_vasg0"]
+[ext_resource type="Texture2D" uid="uid://creks4h5q0hid" path="res://ASSESTS/CENARIO/portal1_frame_4.png" id="5_pioyw"]
+[ext_resource type="Texture2D" uid="uid://chiukl765kcyl" path="res://ASSESTS/CENARIO/portal1_frame_5.png" id="6_fc5xs"]
+[ext_resource type="Texture2D" uid="uid://tdeay0lyfwr1" path="res://ASSESTS/CENARIO/portal1_frame_7.png" id="8_4n1xg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnyn0"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvq2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m06oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_swb2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vasg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pioyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fc5xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ad4go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4n1xg")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[node name="Portal" type="Area2D"]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("1_lnyn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lnyn0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tvq2w")
+animation = &"portal"
+autoplay = "portal"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
