@@ -2,9 +2,9 @@ extends CharacterBody2D
 class_name Aluno
 
 @export_group("Locomotion")
-@export var speed = 150.0
+@export var speed = 130.0
 @export var jump_velocity = -300.0
-@export var run_speed_damping = 5.0
+@export var run_speed_damping = 3.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
