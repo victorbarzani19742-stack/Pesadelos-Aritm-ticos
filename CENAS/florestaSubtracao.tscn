@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cdgtnxvbxqb4r"]
+[gd_scene load_steps=13 format=4 uid="uid://cdgtnxvbxqb4r"]
 
 [ext_resource type="Script" uid="uid://cky78r01hj1b4" path="res://CENAS/camera_2d.gd" id="1_hb7na"]
 [ext_resource type="Texture2D" uid="uid://dvvxdpumlnpaj" path="res://ASSESTS/Tilesets/platforms.png" id="2_xllnj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cd0ywre13tmnt" path="res://ASSESTS/CENARIO/campo.png" id="4_q3lmt"]
 [ext_resource type="PackedScene" uid="uid://oukecwpxy5b2" path="res://CENAS/portal.tscn" id="7_ojb53"]
 [ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="8_24fgu"]
+[ext_resource type="AudioStream" uid="uid://b7wucq78pnh7h" path="res://AUDIO/time_for_adventure.wav" id="9_46oy2"]
 [ext_resource type="Script" uid="uid://cx62mgj8bjkyy" path="res://CENAS/zona_morta.gd" id="12_0lvqe"]
 [ext_resource type="PackedScene" uid="uid://gcq7dry20qrh" path="res://ASSESTS/INIMIGOS/node_2d.tscn" id="13_l6tsj"]
 
@@ -72,11 +73,15 @@ position = Vector2(120, -16)
 position = Vector2(416, -263)
 
 [node name="Enemy" parent="." instance=ExtResource("8_24fgu")]
-position = Vector2(667, -164)
+position = Vector2(135, -51)
 scale = Vector2(0.04, 0.04)
 
 [node name="Enemy2" parent="." instance=ExtResource("8_24fgu")]
 position = Vector2(1125, -147)
 scale = Vector2(0.04, 0.04)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_46oy2")
+autoplay = true
 
 [connection signal="body_entered" from="ZonaMorta" to="Aluno" method="_on_zona_morta_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blifw43a5rudm"]
+[gd_scene load_steps=12 format=3 uid="uid://blifw43a5rudm"]
 
 [ext_resource type="Script" uid="uid://beksu3ohos6rl" path="res://CENAS/portal_3.gd" id="1_w2syl"]
 [ext_resource type="Texture2D" uid="uid://c2dh7236lg235" path="res://ASSESTS/CENARIO/portal1_frame_1.png" id="2_3wiml"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chiukl765kcyl" path="res://ASSESTS/CENARIO/portal1_frame_5.png" id="6_dppe3"]
 [ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="7_ospvo"]
 [ext_resource type="Texture2D" uid="uid://tdeay0lyfwr1" path="res://ASSESTS/CENARIO/portal1_frame_7.png" id="8_xrngx"]
+[ext_resource type="AudioStream" uid="uid://wqgvgy854isq" path="res://AUDIO/level-up-08-402152.mp3" id="9_3wiml"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3wiml"]
 radius = 14.0
@@ -53,5 +54,8 @@ shape = SubResource("CapsuleShape2D_3wiml")
 sprite_frames = SubResource("SpriteFrames_mku0y")
 animation = &"portal"
 autoplay = "portal"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_3wiml")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

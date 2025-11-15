@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://hfq2u3vfrfyq"]
+[gd_scene load_steps=12 format=4 uid="uid://hfq2u3vfrfyq"]
 
 [ext_resource type="Texture2D" uid="uid://dvvxdpumlnpaj" path="res://ASSESTS/Tilesets/platforms.png" id="1_cwxbh"]
 [ext_resource type="PackedScene" uid="uid://b4hkwwi0txwwr" path="res://CENAS/aluno.tscn" id="1_fdc1x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cky78r01hj1b4" path="res://CENAS/camera_2d.gd" id="5_sajf2"]
 [ext_resource type="Script" uid="uid://cx62mgj8bjkyy" path="res://CENAS/zona_morta.gd" id="6_4kadu"]
 [ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="7_h6srr"]
+[ext_resource type="AudioStream" uid="uid://b7wucq78pnh7h" path="res://AUDIO/time_for_adventure.wav" id="8_hulue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wja68"]
 texture = ExtResource("1_cwxbh")
@@ -72,5 +73,11 @@ scale = Vector2(0.04, 0.04)
 [node name="Enemy2" parent="." instance=ExtResource("7_h6srr")]
 position = Vector2(67, -62)
 scale = Vector2(0.04, 0.04)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(349, -215)
+scale = Vector2(0.04, 0.04)
+stream = ExtResource("8_hulue")
+autoplay = true
 
 [connection signal="body_entered" from="ZonaMorta" to="Aluno" method="_on_zona_morta_body_entered"]

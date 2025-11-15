@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://btoy2utivyqvu"]
+[gd_scene load_steps=10 format=4 uid="uid://btoy2utivyqvu"]
 
 [ext_resource type="Texture2D" uid="uid://dvvxdpumlnpaj" path="res://ASSESTS/Tilesets/platforms.png" id="1_v7uqh"]
 [ext_resource type="PackedScene" uid="uid://b4hkwwi0txwwr" path="res://CENAS/aluno.tscn" id="2_at2oe"]
@@ -6,15 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://blifw43a5rudm" path="res://CENAS/portal_3.tscn" id="4_tprxq"]
 [ext_resource type="Script" uid="uid://cky78r01hj1b4" path="res://CENAS/camera_2d.gd" id="5_x8tc2"]
 [ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="6_33ogn"]
+[ext_resource type="AudioStream" uid="uid://b7wucq78pnh7h" path="res://AUDIO/time_for_adventure.wav" id="7_2cucq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3n2k3"]
 texture = ExtResource("1_v7uqh")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.34894, -8, 1.16908)
 2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.34894, -8, 1.16908)
 
 [sub_resource type="TileSet" id="TileSet_us1ra"]
 physics_layer_0/collision_layer = 2
@@ -50,5 +51,9 @@ target_path = NodePath("../Aluno")
 camera_offset = Vector2(0, -20)
 
 [node name="Enemy" parent="." instance=ExtResource("6_33ogn")]
-position = Vector2(733, -251)
+position = Vector2(571, -304)
 scale = Vector2(0.04, 0.04)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2cucq")
+autoplay = true

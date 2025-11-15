@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://brrnc6odbkgo5"]
+[gd_scene load_steps=18 format=4 uid="uid://brrnc6odbkgo5"]
 
 [ext_resource type="PackedScene" uid="uid://b4hkwwi0txwwr" path="res://CENAS/aluno.tscn" id="1_0mef1"]
 [ext_resource type="Texture2D" uid="uid://bvgohbhpxi57i" path="res://ASSESTS/CENARIO/caverna.png" id="2_1bgn6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://da75lgdivckq1" path="res://ASSESTS/Tilesets/chair_darkwood_8x15.png" id="7_pnqrw"]
 [ext_resource type="Script" uid="uid://cx62mgj8bjkyy" path="res://CENAS/zona_morta.gd" id="9_klfgt"]
 [ext_resource type="PackedScene" uid="uid://gi4jybk7b51r" path="res://CENAS/enemy.tscn" id="10_cwtix"]
+[ext_resource type="AudioStream" uid="uid://qh8rcp2vpny4" path="res://AUDIO/honor-and-sword-main-11222.mp3" id="11_rkaii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xmlx"]
 texture = ExtResource("4_htsts")
@@ -3089,6 +3090,7 @@ texture_region_size = Vector2i(16, 17)
 
 [sub_resource type="TileSet" id="TileSet_6gku3"]
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_3xmlx")
 sources/1 = SubResource("TileSetAtlasSource_pnqrw")
 sources/2 = SubResource("TileSetAtlasSource_klfgt")
@@ -3135,11 +3137,16 @@ shape = SubResource("RectangleShape2D_cwtix")
 script = ExtResource("9_klfgt")
 
 [node name="Enemy" parent="." instance=ExtResource("10_cwtix")]
-position = Vector2(514, -12)
+position = Vector2(325, -108)
 scale = Vector2(0.04, 0.04)
 
 [node name="Enemy2" parent="." instance=ExtResource("10_cwtix")]
-position = Vector2(884, -156)
+position = Vector2(198, -113)
 scale = Vector2(0.04, 0.04)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(675, -409)
+stream = ExtResource("11_rkaii")
+autoplay = true
 
 [connection signal="body_entered" from="ZonaMorta" to="Aluno" method="_on_zona_morta_body_entered"]

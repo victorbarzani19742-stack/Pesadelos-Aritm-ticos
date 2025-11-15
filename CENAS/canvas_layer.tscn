@@ -42,8 +42,8 @@ offset_bottom = 710.0
 color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1275.0
-offset_bottom = 711.0
+offset_right = 1281.0
+offset_bottom = 719.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 384.0

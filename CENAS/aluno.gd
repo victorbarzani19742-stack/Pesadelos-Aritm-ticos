@@ -28,14 +28,15 @@ func _physics_process(delta):
 	$Animation.trigger_animation(velocity, direction)
 	move_and_slide()
 
-
 func _on_zona_morta_body_entered(body):
 	if body == self:
 		die()
-
 
 func die():
 	GameOverUi.show_game_over()
 
 func _reload_scene():
 	get_tree().reload_current_scene()
+
+func is_falling() -> bool:
+	return velocity.y > 0

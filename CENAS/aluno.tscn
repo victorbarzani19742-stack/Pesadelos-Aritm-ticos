@@ -53,9 +53,10 @@ collision_mask = 30
 script = ExtResource("1_3tilj")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+position = Vector2(1.19209e-06, 0)
+scale = Vector2(0.866667, 0.8)
 sprite_frames = SubResource("SpriteFrames_r3i07")
-animation = &"aluno"
+animation = &"walk"
 autoplay = "aluno"
 script = ExtResource("6_r31oq")
 

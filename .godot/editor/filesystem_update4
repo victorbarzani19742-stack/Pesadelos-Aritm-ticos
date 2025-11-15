@@ -1,5 +1,3 @@
-res://CENAS/menu.gd
-res://CENAS/menu.tscn
 res://CENAS/aluno.tscn
 res://CENAS/aurora.tscn
 res://CENAS/caverna.tscn
@@ -11,6 +9,9 @@ res://CENAS/portal_2.tscn
 res://CENAS/portal_3.tscn
 res://CENAS/portal_final.tscn
 res://CENAS/enemy.tscn
-res://game_over_ui.gd
+res://CENAS/menu.tscn
 res://CENAS/game_over_ui.tscn
+res://CENAS/enemy.gd
 res://CENAS/aluno.gd
+res://CENAS/game_over_ui.gd
+res://CENAS/portal_3.gd

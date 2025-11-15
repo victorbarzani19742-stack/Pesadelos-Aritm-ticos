@@ -10,16 +10,30 @@ func _process(delta):
 	if !ray_cast_2d.is_colliding():
 		position.y += v_speed * delta
 
+
+func _on_body_entered(body):
+	if body is Aluno:
+		
+		if body.is_falling():
+			_die_from_hit()
+			body.velocity.y = body.jump_velocity  # faz o player quicar
+		else:
+			body.die() 
+
+# Animação normal de morte
 func _die():
 	h_speed = 0
 	v_speed = 0
+	$AudioStreamPlayer2D.play()
 	animated_sprite_2d.play("dead")
+
+
 
 func _die_from_hit():
 	h_speed = 0
 	v_speed = 0
 	rotation_degrees = 180
-
+	$AudioStreamPlayer2D.play()
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(1, false)
 

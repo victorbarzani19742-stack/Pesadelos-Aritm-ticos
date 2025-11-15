@@ -13,14 +13,14 @@ offset_bottom = 710.0
 color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1275.0
-offset_bottom = 711.0
+offset_right = 1284.0
+offset_bottom = 721.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 98.0
-offset_top = 97.0
-offset_right = 529.0
-offset_bottom = 182.0
+offset_left = 153.0
+offset_top = 93.0
+offset_right = 584.0
+offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("2_si1ip")
 theme_override_font_sizes/font_size = 70
 text = "Voce perdeu!"
