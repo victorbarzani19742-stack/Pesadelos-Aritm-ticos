@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1763411183
-icon.svg::CompressedTexture2D/CompressedTexture2D::1720508216002337956::1762381429::1762382011::1::::<><><>0<>0<>a60c60447c9ac1fc09803802ba123c1c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1763413545
+icon.svg::CompressedTexture2D/CompressedTexture2D::1256910878254322131::1762381429::1763413546::1::::<><><>0<>0<>4e7a303645de3c67c07141e6d6351a30<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 menu.gd::GDScript/GDScript::8227030866123183331::1762988345::0::1::::<>Control<><>0<>0<><>::
 portal_4.gd::GDScript/GDScript::8470515255770258314::1763400047::0::1::::<>Area2D<><>0<>0<><>::
 ::res://ASSESTS/::1762988051
@@ -59,7 +59,7 @@ deadly-strike-352458.wav::AudioStreamWAV/AudioStreamWAV::6027295022278090553::17
 honor-and-sword-main-11222.mp3::AudioStreamMP3/AudioStreamMP3::1139506291218804585::1763400047::1763400710::1::::<><><>0<>0<>9f2ef1d1c2637172c10c0965b99c148d<>res://.godot/imported/honor-and-sword-main-11222.mp3-2f7573f6de5f3ab55cfc6eff53e47c3a.mp3str::
 level-up-08-402152.mp3::AudioStreamMP3/AudioStreamMP3::1577586761486286076::1763400047::1763400710::1::::<><><>0<>0<>8124573bbab8043549a3f48723009e76<>res://.godot/imported/level-up-08-402152.mp3-ea4ac90a35f7e906726093a1aae02f12.mp3str::
 time_for_adventure.wav::AudioStreamWAV/AudioStreamWAV::4679098793469869275::1763400047::1763400711::1::::<><><>0<>0<>92c39548703d0c88385845fa2ba534dd<>res://.godot/imported/time_for_adventure.wav-73db98ef0d18dc320e7bcda99575ff69.sample::
-::res://CENAS/::1763400725
+::res://CENAS/::1763411372
 aluno.gd::GDScript/GDScript::8778865327123543053::1763400047::0::1::::Aluno<>CharacterBody2D<><>0<>0<><>::
 aluno.tscn::PackedScene/PackedScene::4436995419902375645::1763400723::0::1::::<><><>0<>0<><>::uid://dxcsvnrfullon::::res://CENAS/aluno.gd<>uid://bdrrb4dcn42p1::::res://ASSESTS/player/studentidle.png<>uid://bi6lmd41sb630::::res://ASSESTS/player/studentjump.png<>uid://dwmbkcyfrahrn::::res://ASSESTS/player/studentwalk1.png<>uid://cm5aov403dyve::::res://ASSESTS/player/studentwalk2.png<>uid://qo4efp2rmym6::::res://CENAS/animation.gd
 animation.gd::GDScript/GDScript::1153691009769992999::1762381429::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
@@ -77,7 +77,7 @@ menu.gd::GDScript/GDScript::5265751639679662910::1762988771::0::1::::<>Control<>
 menu.tscn::PackedScene/PackedScene::4955116297777684613::1763400725::0::1::::<><><>0<>0<><>::uid://cha1fpfkm3oks::::res://CENAS/menu.gd<>uid://blvjocxac6rlr::::res://ASSESTS/HUD/Imagem do WhatsApp de 2025-10-27 à(s) 20.06.26_bb1c2abc.jpg<>uid://bhsyin8k1caw4::::res://ASSESTS/Font/font.ttf
 montanhaMultiplicacao.tscn::PackedScene/PackedScene::502664577239248076::1763400724::0::1::::<><><>0<>0<><>::uid://dvvxdpumlnpaj::::res://ASSESTS/Tilesets/platforms.png<>uid://b4hkwwi0txwwr::::res://CENAS/aluno.tscn<>uid://cwgl1poqsxt4o::::res://ASSESTS/CENARIO/montanha.png<>uid://cpltyjgqsg1n::::res://CENAS/portal_2.tscn<>uid://cky78r01hj1b4::::res://CENAS/camera_2d.gd<>uid://cx62mgj8bjkyy::::res://CENAS/zona_morta.gd<>uid://gi4jybk7b51r::::res://CENAS/enemy.tscn<>uid://b7wucq78pnh7h::::res://AUDIO/time_for_adventure.wav
 pergunta_1.gd::GDScript/GDScript::4391777707585153608::1763400047::0::1::::<>Control<><>0<>0<><>::
-pergunta_1.tscn::PackedScene/PackedScene::8088915086902667199::1763400725::0::1::::<><><>0<>0<><>::uid://bhsyin8k1caw4::::res://ASSESTS/Font/font.ttf<>uid://b3tn64nuk8l6w::::res://CENAS/pergunta_1.gd<>uid://de4ogeo64cva1::::res://ASSESTS/CENARIO/574383f2-81de-4c0e-99e1-9e7b4af318f8.png
+pergunta_1.tscn::PackedScene::8088915086902667199::1763411372::0::1::::<><><>0<>0<><>::uid://bhsyin8k1caw4::::res://ASSESTS/Font/font.ttf<>uid://b3tn64nuk8l6w::::res://CENAS/pergunta_1.gd<>uid://de4ogeo64cva1::::res://ASSESTS/CENARIO/574383f2-81de-4c0e-99e1-9e7b4af318f8.png
 pergunta_2.gd::GDScript/GDScript::2210742851582664017::1763400047::0::1::::<>Control<><>0<>0<><>::
 pergunta_2.tscn::PackedScene/PackedScene::4071304861293492320::1763400725::0::1::::<><><>0<>0<><>::uid://de4ogeo64cva1::::res://ASSESTS/CENARIO/574383f2-81de-4c0e-99e1-9e7b4af318f8.png<>uid://bhsyin8k1caw4::::res://ASSESTS/Font/font.ttf<>uid://6q5u2hc66j3n::::res://CENAS/pergunta_2.gd
 pergunta_3.gd::GDScript/GDScript::2370569570496539721::1763400047::0::1::::<>Control<><>0<>0<><>::

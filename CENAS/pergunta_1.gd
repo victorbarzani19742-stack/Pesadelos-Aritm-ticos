@@ -1,11 +1,11 @@
 extends Control
-var tempo_restante = 60
+var tempo_restante = 20
 
 @onready var label_timer = $LabelTimer
 @onready var timer = $Timer
 
 func _ready():
-	tempo_restante = 60
+	tempo_restante = 20
 	atualizar_timer()
 	timer.start()
 
