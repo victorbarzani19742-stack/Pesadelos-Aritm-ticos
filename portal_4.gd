@@ -9,4 +9,4 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Aluno": 
-		get_tree().change_scene_to_file("res://CENAS/pergunta_2.tscn"	)
+		get_tree().change_scene_to_file("res://CENAS/pergunta_3.tscn"	)

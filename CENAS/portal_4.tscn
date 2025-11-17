@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk2nff14vdlbf"]
+
+[ext_resource type="Script" uid="uid://dsxgfb5xsihfe" path="res://portal_4.gd" id="1_6eg2g"]
+[ext_resource type="Texture2D" uid="uid://c2dh7236lg235" path="res://ASSESTS/CENARIO/portal1_frame_1.png" id="2_42xwf"]
+[ext_resource type="Texture2D" uid="uid://vailwhq7cx7f" path="res://ASSESTS/CENARIO/portal1_frame_2.png" id="3_mh5de"]
+[ext_resource type="Texture2D" uid="uid://c81p1wma2jc6q" path="res://ASSESTS/CENARIO/portal1_frame_3.png" id="4_bpbae"]
+[ext_resource type="Texture2D" uid="uid://creks4h5q0hid" path="res://ASSESTS/CENARIO/portal1_frame_4.png" id="5_23mhy"]
+[ext_resource type="Texture2D" uid="uid://chiukl765kcyl" path="res://ASSESTS/CENARIO/portal1_frame_5.png" id="6_wr3e7"]
+[ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="7_lonat"]
+[ext_resource type="Texture2D" uid="uid://tdeay0lyfwr1" path="res://ASSESTS/CENARIO/portal1_frame_7.png" id="8_nwj0e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5j30l"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfavn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_42xwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mh5de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bpbae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_23mhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wr3e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lonat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nwj0e")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[node name="Portal4" type="Area2D"]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("1_6eg2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5j30l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nfavn")
+animation = &"portal"
+autoplay = "portal"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
