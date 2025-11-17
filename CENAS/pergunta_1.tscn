@@ -42,7 +42,7 @@ offset_right = -30.0
 offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("1_jwlso")
 theme_override_font_sizes/font_size = 50
-text = "10"
+text = "11"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -55,6 +55,7 @@ theme_override_font_sizes/font_size = 50
 text = "43"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = -234.0
 offset_top = 388.0
 offset_right = -35.0
@@ -64,6 +65,7 @@ theme_override_font_sizes/font_size = 50
 text = "22"
 
 [node name="Button4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 267.0
 offset_top = 393.0
 offset_right = 466.0

@@ -19,6 +19,7 @@ scale = Vector2(1.32324, 0.739258)
 texture = ExtResource("1_1iob6")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -380.0
 offset_top = 25.0
 offset_right = 589.0
@@ -54,6 +55,7 @@ theme_override_font_sizes/font_size = 50
 text = "800"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = -234.0
 offset_top = 388.0
 offset_right = -35.0
@@ -63,6 +65,7 @@ theme_override_font_sizes/font_size = 50
 text = "400"
 
 [node name="Button4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 267.0
 offset_top = 393.0
 offset_right = 466.0
@@ -72,6 +75,7 @@ theme_override_font_sizes/font_size = 50
 text = "4"
 
 [node name="LabelTimer" type="Label" parent="."]
+layout_mode = 0
 offset_left = 575.0
 offset_top = -109.0
 offset_right = 694.0
