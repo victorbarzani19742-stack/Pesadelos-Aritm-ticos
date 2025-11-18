@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5fglyhpqh82i"]
+[gd_scene load_steps=9 format=3 uid="uid://b5fglyhpqh82i"]
 
 [ext_resource type="Script" uid="uid://brbr1tl0casvr" path="res://CENAS/boss_math.gd" id="1_05m6p"]
 [ext_resource type="Texture2D" uid="uid://h14ne1lmoar8" path="res://ASSESTS/INIMIGOS/bossmath idle.png" id="2_ajc34"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwfgcan6h64bi" path="res://ASSESTS/INIMIGOS/bossmath morrendo.png" id="4_3x8cv"]
 [ext_resource type="AudioStream" uid="uid://qh8rcp2vpny4" path="res://AUDIO/honor-and-sword-main-11222.mp3" id="5_1yswo"]
 [ext_resource type="PackedScene" uid="uid://cf7w4jxshe47n" path="res://CENAS/game_over_ui.tscn" id="5_ajc34"]
+[ext_resource type="AudioStream" uid="uid://wqgvgy854isq" path="res://AUDIO/level-up-08-402152.mp3" id="7_3x8cv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_33j1m"]
 animations = [{
@@ -86,7 +87,7 @@ theme_override_font_sizes/font_size = 25
 position = Vector2(641, 389)
 scale = Vector2(0.806152, 0.806641)
 sprite_frames = SubResource("SpriteFrames_33j1m")
-animation = &"summon"
+animation = &"attack"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_1yswo")
@@ -109,6 +110,9 @@ theme_override_font_sizes/font_size = 25
 text = "Score: 0 | Combo: 0x"
 
 [node name="GameOverUI" parent="." instance=ExtResource("5_ajc34")]
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_3x8cv")
 
 [connection signal="pressed" from="Button_Option1" to="." method="_on_button_option_1_pressed"]
 [connection signal="pressed" from="Button_Option2" to="." method="_on_button_option_2_pressed"]

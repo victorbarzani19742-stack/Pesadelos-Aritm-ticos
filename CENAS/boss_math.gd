@@ -9,7 +9,9 @@ extends Node2D
 @onready var timer_attack = $Timer_Attack
 @onready var life_bar = $ProgressBar_Life
 @onready var label_score = $Label_Score
-@onready var victory_sound = $AudioStreamPlayer2D
+@onready var victory_sound = $GameOverSound
+
+
 
 # Game Over UI (defina no Inspector)
 @export var game_over_ui: Node
@@ -213,13 +215,13 @@ func boss_die():
 	button2.visible = false
 	label_score.text += "  FINAL!"
 
-	if victory_sound:
-		victory_sound.play()
-
 	await get_tree().create_timer(1.2).timeout
 
 	if game_over_ui:
 		game_over_ui.show_victory()
+
+		if victory_sound:
+			victory_sound.play()    
 	else:
 		print("ERRO: GameOverUi não encontrado.")
 

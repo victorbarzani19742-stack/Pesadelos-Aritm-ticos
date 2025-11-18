@@ -1,10 +1,10 @@
+AudioStreamPlayer2D
 RayCast2D
 Area2D
 CharacterBody2D
 Label
 ProgressBar
 Timer
-AudioStreamPlayer2D
 AnimatedSprite2D
 Button
 Node2D
