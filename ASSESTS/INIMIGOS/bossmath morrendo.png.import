@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn4d8xoywimcv"
-path="res://.godot/imported/Mushroom-Run1.png-e1b5a9603efa625a3bb4f317a21076bf.ctex"
+uid="uid://dwfgcan6h64bi"
+path="res://.godot/imported/bossmath morrendo.png-ef78903ee11c868c52b8c9452ec8773a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSESTS/INIMIGOS/Mushroom-Run1.png"
-dest_files=["res://.godot/imported/Mushroom-Run1.png-e1b5a9603efa625a3bb4f317a21076bf.ctex"]
+source_file="res://ASSESTS/INIMIGOS/bossmath morrendo.png"
+dest_files=["res://.godot/imported/bossmath morrendo.png-ef78903ee11c868c52b8c9452ec8773a.ctex"]
 
 [params]
 

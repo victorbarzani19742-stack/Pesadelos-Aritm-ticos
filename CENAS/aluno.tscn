@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4hkwwi0txwwr"]
+[gd_scene load_steps=10 format=3 uid="uid://b4hkwwi0txwwr"]
 
 [ext_resource type="Script" uid="uid://dxcsvnrfullon" path="res://CENAS/aluno.gd" id="1_3tilj"]
 [ext_resource type="Texture2D" uid="uid://bdrrb4dcn42p1" path="res://ASSESTS/player/studentidle.png" id="2_hexsy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmbkcyfrahrn" path="res://ASSESTS/player/studentwalk1.png" id="4_jf5w3"]
 [ext_resource type="Texture2D" uid="uid://cm5aov403dyve" path="res://ASSESTS/player/studentwalk2.png" id="5_cmp52"]
 [ext_resource type="Script" uid="uid://qo4efp2rmym6" path="res://CENAS/animation.gd" id="6_r31oq"]
+[ext_resource type="PackedScene" uid="uid://cf7w4jxshe47n" path="res://CENAS/game_over_ui.tscn" id="7_8j8ns"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3i07"]
 animations = [{
@@ -62,3 +63,5 @@ script = ExtResource("6_r31oq")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ko6ri")
+
+[node name="GameOverUI" parent="." instance=ExtResource("7_8j8ns")]

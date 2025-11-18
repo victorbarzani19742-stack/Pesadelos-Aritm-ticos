@@ -1,3 +1,5 @@
+res://boss_math.gd
+res://CENAS/boss_math.tscn
 res://CENAS/aluno.tscn
 res://CENAS/florestaSubtracao.tscn
 res://CENAS/montanhaMultiplicacao.tscn
@@ -14,3 +16,6 @@ res://CENAS/pergunta_1.tscn
 res://CENAS/pergunta_2.tscn
 res://CENAS/pergunta_3.tscn
 res://CENAS/portal_4.tscn
+res://CENAS/portal_3.gd
+res://CENAS/boss_math.gd
+res://CENAS/enemy.gd

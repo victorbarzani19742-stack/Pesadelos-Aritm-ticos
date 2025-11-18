@@ -38,8 +38,8 @@ position = Vector2(-4, 11.5)
 shape = SubResource("RectangleShape2D_hp8vh")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-1, 309)
-collision_mask = 2
+target_position = Vector2(-1, 311)
+collision_mask = 65535
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-6, 10.75)
