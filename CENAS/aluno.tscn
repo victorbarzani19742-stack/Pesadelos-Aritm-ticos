@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4hkwwi0txwwr"]
+[gd_scene load_steps=9 format=3 uid="uid://b4hkwwi0txwwr"]
 
 [ext_resource type="Script" uid="uid://dxcsvnrfullon" path="res://CENAS/aluno.gd" id="1_3tilj"]
 [ext_resource type="Texture2D" uid="uid://bdrrb4dcn42p1" path="res://ASSESTS/player/studentidle.png" id="2_hexsy"]
-[ext_resource type="Texture2D" uid="uid://bi6lmd41sb630" path="res://ASSESTS/player/studentjump.png" id="3_i7m5k"]
 [ext_resource type="Texture2D" uid="uid://dwmbkcyfrahrn" path="res://ASSESTS/player/studentwalk1.png" id="4_jf5w3"]
 [ext_resource type="Texture2D" uid="uid://cm5aov403dyve" path="res://ASSESTS/player/studentwalk2.png" id="5_cmp52"]
 [ext_resource type="Script" uid="uid://qo4efp2rmym6" path="res://CENAS/animation.gd" id="6_r31oq"]
@@ -20,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_i7m5k")
+"texture": ExtResource("4_jf5w3")
 }],
 "loop": true,
 "name": &"jump",
@@ -57,7 +56,7 @@ script = ExtResource("1_3tilj")
 position = Vector2(1.19209e-06, 0)
 scale = Vector2(0.866667, 0.8)
 sprite_frames = SubResource("SpriteFrames_r3i07")
-animation = &"walk"
+animation = &"jump"
 autoplay = "aluno"
 script = ExtResource("6_r31oq")
 
