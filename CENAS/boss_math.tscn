@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5fglyhpqh82i"]
+[gd_scene load_steps=10 format=3 uid="uid://b5fglyhpqh82i"]
 
 [ext_resource type="Script" uid="uid://brbr1tl0casvr" path="res://CENAS/boss_math.gd" id="1_05m6p"]
+[ext_resource type="Texture2D" uid="uid://d0ybwlod6w0hn" path="res://ASSESTS/CENARIO/MEu.jpg" id="2_33j1m"]
 [ext_resource type="Texture2D" uid="uid://h14ne1lmoar8" path="res://ASSESTS/INIMIGOS/bossmath idle.png" id="2_ajc34"]
 [ext_resource type="Texture2D" uid="uid://comtu7e5r8me6" path="res://ASSESTS/INIMIGOS/bossmath morrendo2.png" id="3_1yswo"]
 [ext_resource type="Texture2D" uid="uid://dwfgcan6h64bi" path="res://ASSESTS/INIMIGOS/bossmath morrendo.png" id="4_3x8cv"]
@@ -54,6 +55,11 @@ animations = [{
 [node name="BossMath" type="Node2D" node_paths=PackedStringArray("game_over_ui")]
 script = ExtResource("1_05m6p")
 game_over_ui = NodePath("GameOverUI")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(642, 359.5)
+scale = Vector2(0.835938, 0.708008)
+texture = ExtResource("2_33j1m")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

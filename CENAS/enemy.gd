@@ -1,5 +1,6 @@
 extends Area2D
 
+class_name Enemy
 @export var h_speed = 20.0
 @export var v_speed = 100.0
 @onready var ray_cast_2d = $RayCast2D
