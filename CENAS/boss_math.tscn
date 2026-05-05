@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5fglyhpqh82i"]
+
+[ext_resource type="Script" uid="uid://brbr1tl0casvr" path="res://CENAS/boss_math.gd" id="1_05m6p"]
+[ext_resource type="Texture2D" uid="uid://d0ybwlod6w0hn" path="res://ASSESTS/CENARIO/MEu.jpg" id="2_33j1m"]
+[ext_resource type="Texture2D" uid="uid://h14ne1lmoar8" path="res://ASSESTS/INIMIGOS/bossmath idle.png" id="2_ajc34"]
+[ext_resource type="Texture2D" uid="uid://comtu7e5r8me6" path="res://ASSESTS/INIMIGOS/bossmath morrendo2.png" id="3_1yswo"]
+[ext_resource type="Texture2D" uid="uid://dwfgcan6h64bi" path="res://ASSESTS/INIMIGOS/bossmath morrendo.png" id="4_3x8cv"]
+[ext_resource type="AudioStream" uid="uid://qh8rcp2vpny4" path="res://AUDIO/honor-and-sword-main-11222.mp3" id="5_1yswo"]
+[ext_resource type="PackedScene" uid="uid://cf7w4jxshe47n" path="res://CENAS/game_over_ui.tscn" id="5_ajc34"]
+[ext_resource type="AudioStream" uid="uid://wqgvgy854isq" path="res://AUDIO/level-up-08-402152.mp3" id="7_3x8cv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33j1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajc34")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1yswo")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3x8cv")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajc34")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ajc34")
+}],
+"loop": true,
+"name": &"summon",
+"speed": 5.0
+}]
+
+[node name="BossMath" type="Node2D" node_paths=PackedStringArray("game_over_ui")]
+script = ExtResource("1_05m6p")
+game_over_ui = NodePath("GameOverUI")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(642, 359.5)
+scale = Vector2(0.835938, 0.708008)
+texture = ExtResource("2_33j1m")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 625.0
+offset_top = -3.0
+offset_right = 836.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Button_Option1" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 561.0
+offset_right = 368.0
+offset_bottom = 658.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Button_Option2" type="Button" parent="."]
+offset_left = 884.0
+offset_top = 555.0
+offset_right = 1086.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 25
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+position = Vector2(641, 389)
+scale = Vector2(0.806152, 0.806641)
+sprite_frames = SubResource("SpriteFrames_33j1m")
+animation = &"attack"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1yswo")
+
+[node name="Timer_Attack" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="ProgressBar_Life" type="ProgressBar" parent="."]
+offset_left = 1001.0
+offset_right = 1279.0
+offset_bottom = 78.0
+max_value = 5.0
+value = 5.0
+
+[node name="Label_Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25
+text = "Score: 0 | Combo: 0x"
+
+[node name="GameOverUI" parent="." instance=ExtResource("5_ajc34")]
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_3x8cv")
+
+[connection signal="pressed" from="Button_Option1" to="." method="_on_button_option_1_pressed"]
+[connection signal="pressed" from="Button_Option2" to="." method="_on_button_option_2_pressed"]
+[connection signal="timeout" from="Timer_Attack" to="." method="_on_timer_attack_timeout"]

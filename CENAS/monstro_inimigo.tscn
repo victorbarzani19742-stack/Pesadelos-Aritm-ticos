@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvr58lgup7vwj"]
+
+[ext_resource type="Texture2D" uid="uid://cf7yxto6ultyv" path="res://ASSESTS/INIMIGOS/demonWalk2.png" id="1_j0ufv"]
+[ext_resource type="Script" uid="uid://cvix4ccmrlluj" path="res://CENAS/monstro_inimigo.gd" id="1_rvce5"]
+[ext_resource type="Texture2D" uid="uid://dta87jyn4kxmd" path="res://ASSESTS/INIMIGOS/demonWalk3.png" id="2_rvce5"]
+[ext_resource type="Texture2D" uid="uid://18b0uji0ivx7" path="res://ASSESTS/INIMIGOS/demonWalk1.png" id="3_jcqtw"]
+[ext_resource type="AudioStream" uid="uid://cr4wwyxrfvrp6" path="res://AUDIO/deadly-strike-352458.wav" id="4_138dx"]
+[ext_resource type="Texture2D" uid="uid://cndw4jrhec64d" path="res://ASSESTS/INIMIGOS/demonWalk4.png" id="5_138dx"]
+[ext_resource type="Texture2D" uid="uid://boxf5ss02khjo" path="res://ASSESTS/INIMIGOS/demonWalk5.png" id="6_tkf3q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkf3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jcqtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_j0ufv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rvce5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_138dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tkf3q")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_263sy"]
+size = Vector2(29, 31)
+
+[node name="MonstroInimigo" type="Area2D"]
+script = ExtResource("1_rvce5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.625, 8.92423)
+scale = Vector2(0.400685, 0.320951)
+sprite_frames = SubResource("SpriteFrames_tkf3q")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_263sy")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 26)
+collision_mask = 65535
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.499999, 9)
+scale = Vector2(1.45, 1.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_138dx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnur2i2du4g1d"]
+
+[ext_resource type="Texture2D" uid="uid://c2dh7236lg235" path="res://ASSESTS/CENARIO/portal1_frame_1.png" id="1_54cgh"]
+[ext_resource type="Texture2D" uid="uid://vailwhq7cx7f" path="res://ASSESTS/CENARIO/portal1_frame_2.png" id="2_mtoa3"]
+[ext_resource type="Texture2D" uid="uid://c81p1wma2jc6q" path="res://ASSESTS/CENARIO/portal1_frame_3.png" id="3_gnop2"]
+[ext_resource type="Texture2D" uid="uid://creks4h5q0hid" path="res://ASSESTS/CENARIO/portal1_frame_4.png" id="4_3vyhn"]
+[ext_resource type="Texture2D" uid="uid://chiukl765kcyl" path="res://ASSESTS/CENARIO/portal1_frame_5.png" id="5_t2u3v"]
+[ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="6_6ek1p"]
+[ext_resource type="Texture2D" uid="uid://tdeay0lyfwr1" path="res://ASSESTS/CENARIO/portal1_frame_7.png" id="7_ew1pa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2uykd"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kfvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_54cgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mtoa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gnop2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3vyhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t2u3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6ek1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ew1pa")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[node name="PortalFinal" type="Area2D"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2uykd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6kfvp")
+animation = &"portal"
+autoplay = "portal"

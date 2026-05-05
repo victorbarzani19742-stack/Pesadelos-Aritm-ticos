@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpltyjgqsg1n"]
+
+[ext_resource type="Script" uid="uid://d74c1ept6ldk" path="res://CENAS/portal_2.gd" id="1_io6p0"]
+[ext_resource type="Texture2D" uid="uid://c2dh7236lg235" path="res://ASSESTS/CENARIO/portal1_frame_1.png" id="2_qyc7u"]
+[ext_resource type="Texture2D" uid="uid://vailwhq7cx7f" path="res://ASSESTS/CENARIO/portal1_frame_2.png" id="3_55u1m"]
+[ext_resource type="Texture2D" uid="uid://c81p1wma2jc6q" path="res://ASSESTS/CENARIO/portal1_frame_3.png" id="4_vqn2a"]
+[ext_resource type="Texture2D" uid="uid://creks4h5q0hid" path="res://ASSESTS/CENARIO/portal1_frame_4.png" id="5_sqyf6"]
+[ext_resource type="Texture2D" uid="uid://chiukl765kcyl" path="res://ASSESTS/CENARIO/portal1_frame_5.png" id="6_rkxon"]
+[ext_resource type="Texture2D" uid="uid://c60tfwjqvuxk8" path="res://ASSESTS/CENARIO/portal1_frame_6.png" id="7_qs3pa"]
+[ext_resource type="Texture2D" uid="uid://tdeay0lyfwr1" path="res://ASSESTS/CENARIO/portal1_frame_7.png" id="8_1e7ct"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qyc7u"]
+radius = 14.0
+height = 46.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55u1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qyc7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_55u1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vqn2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sqyf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rkxon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qs3pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1e7ct")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 5.0
+}]
+
+[node name="Portal2" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_io6p0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qyc7u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_55u1m")
+animation = &"portal"
+autoplay = "portal"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
